@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Setup Instructions
 
-## Getting Started
+Follow these steps to set up and deploy the project using Supabase, Docker, and Next.js.
 
-First, run the development server:
+---
 
+## Prerequisites
+
+- **Docker Desktop**: [Install Docker Desktop](https://www.docker.com/products/docker-desktop).
+- **Supabase CLI**: [Install Supabase CLI](https://supabase.com/docs/guides/cli).
+- **Resend Account**: Set up an account at [Resend](https://resend.com).
+
+---
+
+## Setup Steps
+
+### 1. Link Supabase Project
+Link your local environment to your Supabase project with the following command:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+supabase link
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Run migrations
+```bash
+supabase db push
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+From your supabase storage change the media storage public
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Run migration
+start docker desktop
 
-## Learn More
+### 4. Deploy supabase edge functions
+```bash
+supabase functions deploy
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4.  Set Supabase Secrets
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cp supabase/.env.example supabase/.env
+```
+past your resend api key in the `.env` file
+RESEND_API_KEY=************************
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### 5.  Deploy your secret to supabase
+```bash
+supabase secrets set --env-file ./supabase/.env
+```
+### 6.  link resend to supabase
+[Do it via](https://resend.com/settings/integrations/supabase)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 7.  update tsconfig.ts
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@/node_modules/*": ["./node_modules/*"]
+    }
+  }
+}
+```
+### 8.  update next.config.ts to accept served media files
+
+```js
+const nextConfig = {
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'vgrwxgjduftemwuczacc.supabase.co',
+            pathname: '**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'images.unsplash.com',
+            pathname: '**',
+          },
+        ],
+      },
+};
+```
+
+### 9.  set up pg_cron and pg_net extensions
+[Do it via](https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions)
+
+### 10.  run your app and register as an admin
+```bash
+npm run dev
+```
+
+`locahost:3000/cms/login`
