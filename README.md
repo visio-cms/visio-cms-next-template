@@ -16,6 +16,7 @@ Follow these steps to set up and deploy the project using Supabase, Docker, and 
 git clone https://github.com/visio-cms/visio-cms-next-template.git your-project_name
 
 cd your-project-name
+npm i
 ```
 
 ## Setup Steps
@@ -56,7 +57,7 @@ RESEND_API_KEY=[YOUR-RESEND-API-KEY-HERE]
 supabase secrets set --env-file ./supabase/.env
 ```
 ### 6.  link resend to supabase
-[https://resend.com/settings/integrations/supabase](https://resend.com/settings/integrations/supabase)
+[https://resend.com/settings/integrations](https://resend.com/settings/integrations)
 
 
 ### 7.  update tsconfig.ts
@@ -93,12 +94,13 @@ const nextConfig = {
 ```
 
 ### 9.  set up `pg_cron` and `pg_net` extensions
-[https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions](https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions)
+Database > extensions
+Search and enable `pg_cron` and `pg_next`
 
 
 ### 10.  Add your supabase and unsplash keys to `.env`
 ```bash
-cp .env.example supabase/.env
+cp .env.example .env
 ```
 NEXT_PUBLIC_SUPABASE_PROJECT_ID=<br/>
 NEXT_PUBLIC_SUPABASE_ANONKEY=<br/>
@@ -109,8 +111,11 @@ NEXT_PUBLIC_EMAIL_SENDER="[Sender Id] <username@your-domain.com>"
 
 ### 11.  run your app and register as an admin
 ```bash
-npm i
 npm run dev
 ```
 
-`locahost:3000/cms/login`
+`locahost:3000/cms/register`
+
+Confirm your email address and login
+
+`localhost:300/cms/login`
