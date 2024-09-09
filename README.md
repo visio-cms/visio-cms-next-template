@@ -46,7 +46,8 @@ supabase functions deploy
 ```bash
 cp supabase/.env.example supabase/.env
 ```
-past your resend api key in the `.env` file \n
+past your resend api key in the `.env` file
+
 RESEND_API_KEY=[YOUR-RESEND-API-KEY-HERE]
 
 
@@ -89,7 +90,7 @@ const nextConfig = {
 };
 ```
 
-### 9.  set up pg_cron and pg_net extensions
+### 9.  set up `pg_cron` and `pg_net` extensions
 [https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions](https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions)
 
 ### 10.  run your app and register as an admin
