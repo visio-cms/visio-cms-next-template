@@ -94,7 +94,7 @@ const nextConfig = {
 [https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions](https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions)
 
 
-### 11.  Add your supabase and unsplash keys to `.env`
+### 10.  Add your supabase and unsplash keys to `.env`
 ```bash
 cp .env.example supabase/.env
 ```
