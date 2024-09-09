@@ -46,8 +46,8 @@ supabase functions deploy
 ```bash
 cp supabase/.env.example supabase/.env
 ```
-past your resend api key in the `.env` file
-RESEND_API_KEY=************************
+past your resend api key in the `.env` file \n
+RESEND_API_KEY=[YOUR-RESEND-API-KEY-HERE]
 
 
 ### 5.  Deploy your secret to supabase
