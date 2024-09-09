@@ -49,7 +49,7 @@ RESEND_API_KEY=************************
 supabase secrets set --env-file ./supabase/.env
 ```
 ### 6.  link resend to supabase
-[Do it via](https://resend.com/settings/integrations/supabase)
+[Do it via https://resend.com/settings/integrations/supabase](https://resend.com/settings/integrations/supabase)
 
 
 ### 7.  update tsconfig.ts
@@ -84,7 +84,7 @@ const nextConfig = {
 ```
 
 ### 9.  set up pg_cron and pg_net extensions
-[Do it via](https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions)
+[Do it via https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions](https://supabase.com/dashboard/project/vgrwxgjduftemwuczacc/database/extensions)
 
 ### 10.  run your app and register as an admin
 ```bash
