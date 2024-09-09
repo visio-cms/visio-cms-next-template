@@ -19,7 +19,7 @@ const config = buildConfig({
     locale: 'en-us',
   },
   emailSender: process.env.NEXT_PUBLIC_EMAIL_SENDER || '',
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID || '',
+  projectId: process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID || '',
   supabaseProjectUrl: process.env.NEXT_PUBLIC_SUPABASE_URL || '',
   supabaseAnonKey: process.env.NEXT_PUBLIC_SUPABASE_ANONKEY || '',
   unsplashAccessKey: process.env.NEXT_PUBLIC_UNSPLASH_ACCESSKEY || '',

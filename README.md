@@ -5,11 +5,11 @@ Follow these steps to set up and deploy the project using Supabase, Docker, and 
 ---
 
 ## Prerequisites
-
+- **Supabase Account**: Set up an account at [supabase](https://supabase.com/).
 - **Docker Desktop**: [Install Docker Desktop](https://www.docker.com/products/docker-desktop).
 - **Supabase CLI**: [Install Supabase CLI](https://supabase.com/docs/guides/cli).
 - **Resend Account**: Set up an account at [Resend](https://resend.com).
-
+- **Unplash Account**: Set up an account at [Unsplash](https://unsplash.com/).
 ---
 
 ```bash
@@ -60,10 +60,12 @@ supabase secrets set --env-file ./supabase/.env
 
 
 ### 7.  update tsconfig.ts
+add "@/node_modules/*": ["./node_modules/*"] to paths
 ```json
 {
   "compilerOptions": {
     "paths": {
+       .....,
       "@/node_modules/*": ["./node_modules/*"]
     }
   }
@@ -98,11 +100,11 @@ const nextConfig = {
 ```bash
 cp .env.example supabase/.env
 ```
-NEXT_PUBLIC_PROJECT_ID=<br/>
+NEXT_PUBLIC_SUPABASE_PROJECT_ID=<br/>
 NEXT_PUBLIC_SUPABASE_ANONKEY=<br/>
 NEXT_PUBLIC_UNSPLASH_ACCESSKEY=<br/>
 NEXT_PUBLIC_SUPABASE_URL=<br/>
-NEXT_PUBLIC_EMAIL_SENDER=<br/>
+NEXT_PUBLIC_EMAIL_SENDER="[Sender Id] <username@your-domain.com>"
 
 
 ### 11.  run your app and register as an admin
