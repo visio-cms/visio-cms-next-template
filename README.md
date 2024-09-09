@@ -33,7 +33,7 @@ supabase db push
 
 From your supabase storage change the media storage public
 
-### 3. Run migration
+### 3. Start docker
 start docker desktop
 
 ### 4. Deploy supabase edge functions
