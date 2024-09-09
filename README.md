@@ -13,9 +13,9 @@ Follow these steps to set up and deploy the project using Supabase, Docker, and 
 ---
 
 ```bash
-git clone https://github.com/visio-cms/visio-cms-next-template.git
+git clone https://github.com/visio-cms/visio-cms-next-template.git your-project_name
 
-cd visio-cms-next-template
+cd your-project-name
 ```
 
 ## Setup Steps
