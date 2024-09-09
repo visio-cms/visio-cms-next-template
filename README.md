@@ -5,7 +5,7 @@ Follow these steps to set up and deploy the project using Supabase, Docker, and 
 ---
 
 ## Prerequisites
-- **Supabase Account**: Set up an account at [supabase](https://supabase.com/).
+- **Supabase Account**: Set up an account at [supabase](https://supabase.com/) and create a project.
 - **Docker Desktop**: [Install Docker Desktop](https://www.docker.com/products/docker-desktop).
 - **Supabase CLI**: [Install Supabase CLI](https://supabase.com/docs/guides/cli).
 - **Resend Account**: Set up an account at [Resend](https://resend.com).
