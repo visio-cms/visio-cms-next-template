@@ -31,7 +31,7 @@ supabase link
 supabase db push
 ```
 
-From your supabase storage change the media storage public
+From your supabase storage change the `media` storage to public
 
 ### 3. Start docker
 start docker desktop
@@ -77,7 +77,7 @@ const nextConfig = {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'vgrwxgjduftemwuczacc.supabase.co',
+            hostname: '[YOUR-SUPABASE-PROJECT-ID].supabase.co',
             pathname: '**',
           },
           {
@@ -98,15 +98,16 @@ const nextConfig = {
 ```bash
 cp .env.example supabase/.env
 ```
-NEXT_PUBLIC_PROJECT_ID=
-NEXT_PUBLIC_SUPABASE_ANONKEY=
-NEXT_PUBLIC_UNSPLASH_ACCESSKEY=
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_EMAIL_SENDER=
+NEXT_PUBLIC_PROJECT_ID=<br/>
+NEXT_PUBLIC_SUPABASE_ANONKEY=<br/>
+NEXT_PUBLIC_UNSPLASH_ACCESSKEY=<br/>
+NEXT_PUBLIC_SUPABASE_URL=<br/>
+NEXT_PUBLIC_EMAIL_SENDER=<br/>
 
 
 ### 11.  run your app and register as an admin
 ```bash
+npm i
 npm run dev
 ```
 
