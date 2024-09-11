@@ -1,4 +1,5 @@
 'use client'
+import '@/app/globals.css'
 import Cms from 'visio-cms-lib/Cms'
 import '@/node_modules/visio-cms-lib/dist/lib.css'
 import config from  '@/visio.config'
