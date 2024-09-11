@@ -26,7 +26,7 @@ Link your local environment to your Supabase project with the following command:
 
 ```bash
 supabase login
-supabase link --project-ref <project-id>
+supabase link
 ```
 
 ### 2. Run migrations
