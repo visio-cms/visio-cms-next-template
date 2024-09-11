@@ -1,5 +1,9 @@
-import Page from './[...slug]/page';
+import Page from "./[...slug]/page";
 
-export default function PageWithLocale({ params }: { params: { locale: string } }) {
-  return <Page params={{ slug: ['index'], locale: params.locale }} />;
+export default function PageWithLocale({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return <Page params={{ slug: ["index"], locale: params.locale }} />;
 }

@@ -11,7 +11,7 @@ type MatchResult = {
 
 export function matchSlug(slug: string, pages: Page[]): MatchResult {
   // Normalize the slug by removing any trailing slashes
-  const normalizedSlug = slug.endsWith('/') ? slug.slice(0, -1) : slug;
+  const normalizedSlug = slug.endsWith("/") ? slug.slice(0, -1) : slug;
 
   // First, check for an exact match
   const exactMatch = pages.find((page) => page.slug === normalizedSlug);
@@ -19,8 +19,8 @@ export function matchSlug(slug: string, pages: Page[]): MatchResult {
 
   // If no exact match, look for a pattern match
   for (const page of pages) {
-    const pageParts = page.slug.split('/');
-    const slugParts = normalizedSlug.split('/');
+    const pageParts = page.slug.split("/");
+    const slugParts = normalizedSlug.split("/");
 
     if (pageParts.length !== slugParts.length) continue;
 
@@ -28,7 +28,7 @@ export function matchSlug(slug: string, pages: Page[]): MatchResult {
     const params: { [key: string]: string } = {};
 
     for (let i = 0; i < pageParts.length; i++) {
-      if (pageParts[i].startsWith(':')) {
+      if (pageParts[i].startsWith(":")) {
         // It's a parameter, so capture its value
         const paramName = pageParts[i].slice(1);
         params[paramName] = slugParts[i];
@@ -53,7 +53,7 @@ export function dateToCron(date: string) {
   const hours = jsDate.getUTCHours();
   const dayOfMonth = jsDate.getUTCDate();
   const month = jsDate.getUTCMonth() + 1; // Cron months are 1-based (January is 1, December is 12)
-  const dayOfWeek = '*'; // Set to '*' because it's not relevant for a specific date
+  const dayOfWeek = "*"; // Set to '*' because it's not relevant for a specific date
 
   // Generate the cron expression
   const cronExpression = `${minutes} ${hours} ${dayOfMonth} ${month} ${dayOfWeek}`;
@@ -73,7 +73,7 @@ export async function sendEmail({
   subject: string;
 }) {
   try {
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
+    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     const payload = emails.map((email: string) => ({
       from,
       to: [email],
@@ -81,10 +81,10 @@ export async function sendEmail({
       html: body,
     }));
 
-    const res = await fetch('https://api.resend.com/emails/batch', {
-      method: 'POST',
+    const res = await fetch("https://api.resend.com/emails/batch", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify(payload),
