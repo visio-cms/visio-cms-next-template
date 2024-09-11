@@ -51,9 +51,9 @@ const handler = async (req: Request): Promise<Response> => {
         pageBlocks: [...pageBlocks],
         pages: data,
         projectConfiguration: {
-          globalBlocks: projectConfiguration[0].global_blocks,
-          theme: projectConfiguration[0].theme,
-          scripts: projectConfiguration[0].scripts,
+          globalBlocks: projectConfiguration[0]?.global_blocks || [],
+          theme: projectConfiguration[0]?.theme || null,
+          scripts: projectConfiguration[0]?.scripts || null,
         },
         params: { ...foundPage?.params, locale, pageSlug: foundPage?.page?.slug },
       }),

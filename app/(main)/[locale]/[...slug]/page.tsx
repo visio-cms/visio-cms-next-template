@@ -5,6 +5,8 @@ import PageContent from '../../page-content'
 import NotFound from '@/app/not-found'
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import '@/app/globals.css'
+
 type PageProps = {
   params: { slug: string[]; locale: string }
 }

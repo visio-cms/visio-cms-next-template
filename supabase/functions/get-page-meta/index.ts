@@ -63,6 +63,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
     );
   } catch (error) {
+    console.log(error)
     return new Response(null, {
       status: 500,
       statusText: 'Internal Server Error',

@@ -7,7 +7,7 @@ interface HeroProps {
 }
 const Hero:Block<HeroProps> = ({title, pageBlockId=''})=>{
     return (
-        <div><Text pageBlockId={pageBlockId} propName="title" defaultValue={title}/></div>
+        <div className="h-16 bg-slate-200 text-black"><Text pageBlockId={pageBlockId} propName="title" defaultValue={title}/></div>
     )
 }
 

@@ -24,6 +24,7 @@ npm i visio-cms-lib@latest
 ### 1. Link Supabase Project
 Link your local environment to your Supabase project with the following command:
 ```bash
+supabase login
 supabase link --project-ref <project-id>
 ```
 
@@ -114,7 +115,7 @@ NEXT_PUBLIC_EMAIL_SENDER="[Sender Id] <username@your-domain.com>"
 npm run dev
 ```
 
-`locahost:3000/cms/register`
+`localhost:3000/cms/register`
 
 Confirm your email address and login
 

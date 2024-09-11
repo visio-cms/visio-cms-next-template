@@ -7,7 +7,7 @@ const config = buildConfig({
   supportedLanguages: [
     {
       language: 'English',
-      locale: 'en-us',
+      locale: 'en',
     },
     {
       language: 'German',
@@ -16,7 +16,7 @@ const config = buildConfig({
   ],
   defaultLanguage: {
     language: 'English',
-    locale: 'en-us',
+    locale: 'en',
   },
   emailSender: process.env.NEXT_PUBLIC_EMAIL_SENDER || '',
   projectId: process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID || '',
