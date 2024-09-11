@@ -15,10 +15,7 @@ Follow these steps to set up and deploy the project using Supabase, Docker, and 
 ---
 
 ```bash
-git clone https://github.com/visio-cms/visio-cms-next-template.git your-project_name
-
-cd your-project-name
-npm i visio-cms-lib@latest
+npx create-visio-cms-app@latest
 ```
 
 ## Setup Steps
@@ -70,22 +67,8 @@ supabase secrets set --env-file ./supabase/.env
 
 [https://resend.com/settings/integrations](https://resend.com/settings/integrations)
 
-### 7. update tsconfig.ts
 
-add "@/node_modules/_": ["./node_modules/_"] to paths
-
-```json
-{
-  "compilerOptions": {
-    "paths": {
-       .....,
-      "@/node_modules/*": ["./node_modules/*"]
-    }
-  }
-}
-```
-
-### 8. update next.config.ts to accept served media files
+### 7. update next.config.ts to accept served media files
 
 ```js
 const nextConfig = {
@@ -106,12 +89,12 @@ const nextConfig = {
 };
 ```
 
-### 9. set up `pg_cron` and `pg_net` extensions
+### 8. set up `pg_cron` and `pg_net` extensions
 
 Database > extensions
 Search and enable `pg_cron` and `pg_next`
 
-### 10. Add your supabase and unsplash keys to `.env`
+### 9. Add your supabase and unsplash keys to `.env`
 
 ```bash
 cp .env.example .env
@@ -123,7 +106,7 @@ NEXT_PUBLIC_UNSPLASH_ACCESSKEY=<br/>
 NEXT_PUBLIC_SUPABASE_URL=<br/>
 NEXT_PUBLIC_EMAIL_SENDER="[Sender Id] <username@your-domain.com>"
 
-### 11. run your app and register as an admin
+### 10. run your app and register as an admin
 
 ```bash
 npm run dev
