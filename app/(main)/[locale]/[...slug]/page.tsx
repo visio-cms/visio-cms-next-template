@@ -14,12 +14,14 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug, locale } = params
 
-  const pageMetaData = await getPageMetaData(
+  const data = await getPageMetaData(
     `/${slug.join('/')}`,
     process.env.NEXT_PUBLIC_SUPABASE_ANONKEY || '',
     process.env.NEXT_PUBLIC_SUPABASE_URL || '',
     locale,
   )
+
+  const pageMetaData = data?.seo || {}
 
   return {
     title: pageMetaData.title,

@@ -19,7 +19,7 @@ export default function PageContent({
       pageBlocks={pageBlocks}
       projectConfiguration={{
         ...projectConfiguration,
-        projectId: process.env.NEXT_PUBLIC_PROJECT_ID || '',
+        projectId: process.env.NEXT_PUBLIC_SUPABASE_PROJECT_ID || '',
         blocks,
       }}
       params={params}

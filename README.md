@@ -24,7 +24,7 @@ npm i visio-cms-lib@latest
 ### 1. Link Supabase Project
 Link your local environment to your Supabase project with the following command:
 ```bash
-supabase link
+supabase link --project-ref <project-id>
 ```
 
 ### 2. Run migrations
